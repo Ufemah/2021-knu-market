@@ -11,8 +11,8 @@ def train(i, j, k, data, number_of_predictions):
 
 def min_func(ideal, new_pred, i, j, k, min_count, min_summ_array,length):
     new_count = 0
-    for c in range(length, length+len(ideal)):
-        new_count += math.sqrt(((ideal[c] - new_pred[c])**2))
+    for c in range(0, len(ideal)):
+        new_count += math.sqrt(((ideal[length+c] - new_pred[c])**2))
     if new_count - min_count > 0:
         pass
     elif new_count - min_count < 0:
