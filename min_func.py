@@ -9,9 +9,9 @@ def train(i, j, k, data, number_of_predictions):
     return arima
 
 
-def min_func(ideal, new_pred, i, j, k, min_count, min_summ_array):
+def min_func(ideal, new_pred, i, j, k, min_count, min_summ_array,length):
     new_count = 0
-    for c in range(len(ideal)):
+    for c in range(length, length+len(ideal)):
         new_count += math.sqrt(((ideal[c] - new_pred[c])**2))
     if new_count - min_count > 0:
         pass
@@ -41,5 +41,5 @@ if __name__ == '__main__':
         for j in range(len(train_set)):
             for k in range(len(train_set)):
                 arima_i = train(i, j, k, train_set, len(ideal))
-                min_func(ideal, arima_i, i, j, k,min_count,min_summ_array)
+                min_func(ideal, arima_i, i, j, k,min_count,min_summ_array,len(train_set))
     print(min_summ_array,min_count)
