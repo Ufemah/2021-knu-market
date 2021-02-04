@@ -14,18 +14,17 @@ def min_func(ideal, new_pred, i, j, k, min_count, min_summ_array,length):
     for c in range(0, len(ideal)):
         new_count += math.sqrt(((ideal[length+c] - new_pred[c])**2))
     if new_count - min_count > 0:
-        pass
+        return min_count, min_summ_array
     elif new_count - min_count < 0:
         f = open("res.txt", 'a')
         f.write("configuration:{0}{1}{2} better than previous; new_count = {3} \n".format(i,j,k,new_count))
         f.close()
-        min_summ_array = new_pred
-        min_count = new_count
+        return new_pred,new_count
     elif new_count - min_count == 0:
         f = open("res.txt", 'a')
         f.write("configuration:{0}{1}{2} equal to the previous one \n".format(i,j,k))
         f.close()
-
+        return new_pred,new_count
 
 
 if __name__ == '__main__':
@@ -41,5 +40,5 @@ if __name__ == '__main__':
         for j in range(len(train_set)):
             for k in range(len(train_set)):
                 arima_i = train(i, j, k, train_set, len(ideal))
-                min_func(ideal, arima_i, i, j, k,min_count,min_summ_array,len(train_set))
+                min_summ_array, min_count = min_func(ideal, arima_i, i, j, k,min_count,min_summ_array,len(train_set))
     print(min_summ_array,min_count)
