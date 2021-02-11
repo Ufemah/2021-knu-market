@@ -18,3 +18,4 @@ SARIMA method is great for univariate time series with trend and/or seasonal com
 
 Data Verification
 
+Data forecasting methods (ARIMA in our case) and Bitcoin price behaviour are both delicate and sensitive concepts that require combine and complicated approach to work with them. The new worldwide currency like Bitcoin behaviour is still really hard to predict even with help of modern forecasting methods.
