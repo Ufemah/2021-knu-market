@@ -1,3 +1,5 @@
-The analysis was conducted using only one dataset - every hour observation. There are few reason for that choice. Firstly, while visual analysis we don't need to have such detailed data, too many dots looks like spots. Secondly, complex models (ARMA, ARIMA, SARIMA) need much more computing power, moreover, only every 100 value from "hour" dataset was used to build models. 
+The analysis was conducted using only one dataset - every hour observation. There are few reason for that choice. Firstly, while visual analysis we don't need to have such detailed data, too many dots looks like spots. Secondly, complex models (ARMA, ARIMA, SARIMA) need much more computing power.
 
-After checking models I can see, that simple models (AR, MA, SES and HWES) are pretty good, on my mind, HWES is the best of all predicts bitcoin price. On the other hand, complex models did not live up to expectations. Not perfect result may be caused by pc resource-intensive algorithms as theoretical coefficients, got with ACF and PACF, was too large to build model.
+After checking models I can see, that simple models (AR, MA, SES and HWES) are pretty good, on my mind, HWES is the best of all predicts bitcoin price. 
+
+On the other hand, complex models did not live up to expectations. Not perfect result may be caused by overfitting, as I used only part of dataset in order to build models.
