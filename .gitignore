@@ -139,6 +139,9 @@ static/
 # System files
 *.swp
 
+# lfs
+*.csv
+
 # Jupyter files 
 .ipynb_checkpoints/*
 .ipynb_checkpoints/
