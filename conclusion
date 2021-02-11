@@ -1,0 +1,2 @@
+The analysis was conducted using only one dataset - every hour observation. There are few reason for that choice. Firstly, while visual analysis we don't need to have such detailed data, too many dots looks like spots. Secondly, complex models (ARMA, ARIMA, SARIMA) need much more computing power, moreover, only every 100 value from "hour" dataset was used to build models. 
+
