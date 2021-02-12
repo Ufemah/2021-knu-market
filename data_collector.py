@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import re
+import schedule,time
 
 
 def main():
@@ -14,8 +15,15 @@ def main():
     pattern = '\d{2}\s\d{3}'
     a = re.findall(pattern,str(results))
     btc = a[0]
+    f = open("BTC-USD.txt",'a')
+    wrt = str(btc)+'\n'
+    f.write(wrt)
     print(btc)
 
 
 if __name__ == '__main__':
     main()
+    schedule.every(1).day.at("10:30").do(main)
+    while 1:
+        schedule.run_pending()
+        time.sleep(1)
